@@ -1,8 +1,8 @@
-import BaseColorPicker from '~/colorpicker/BaseColorPicker';
-import PaletteRing from '~/colorpicker/ui/PaletteRing';
-import Palette from '~/colorpicker/ui/Palette';
-import Forms from '~/colorpicker/ui/ColorInformation';
-import Swatch from '~/colorpicker/ui/Swatch';
+import BaseColorPicker from '../../../colorpicker/BaseColorPicker';
+import PaletteRing from '../../../colorpicker/ui/PaletteRing';
+import Palette from '../../../colorpicker/ui/Palette';
+import Forms from '../../../colorpicker/ui/ColorInformation';
+import Swatch from '../../../colorpicker/ui/Swatch';
 import Control from './Control';
 import './index.scss';
 

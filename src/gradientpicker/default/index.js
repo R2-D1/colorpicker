@@ -1,5 +1,5 @@
 import Color from '@easylogic/color';
-import BaseColorPicker from '~/colorpicker/BaseColorPicker';
+import BaseColorPicker from '../../colorpicker/BaseColorPicker';
 import EmbedColorPicker from './EmbedColorPicker';
 import GradientEditor from './GradientEditor';
 import './index.scss';
@@ -30,7 +30,7 @@ export default class DefaultGradientPicker extends BaseColorPicker {
       EmbedColorPicker,
       GradientEditor
     }
-  } 
+  }
 
   parseImage (str) {
     var results = Color.convertMatches(str);
@@ -55,7 +55,7 @@ export default class DefaultGradientPicker extends BaseColorPicker {
     });
 
     return image
-  }  
+  }
 
 
   callbackColorValue() {
@@ -66,7 +66,7 @@ export default class DefaultGradientPicker extends BaseColorPicker {
 
     if (typeof this.colorpickerShowCallback == 'function') {
         this.colorpickerShowCallback(gradientString, this.image);
-    }        
+    }
   }
 
   callbackHideColorValue() {
@@ -77,8 +77,8 @@ export default class DefaultGradientPicker extends BaseColorPicker {
 
       if (typeof this.colorpickerHideCallback == 'function') {
           this.colorpickerHideCallback(gradientString, this.image);
-      }        
-  }    
+      }
+  }
 
 
   initialize() {
@@ -96,7 +96,7 @@ export default class DefaultGradientPicker extends BaseColorPicker {
   setGradient (gradientString) {
     this.gradient = gradientString
     this.image = this.parseImage(this.gradient);
-    this.selectTabContent(this.image.type);        
+    this.selectTabContent(this.image.type);
   }
 
   /**
@@ -123,11 +123,11 @@ export default class DefaultGradientPicker extends BaseColorPicker {
             <div class="picker-tab-list" ref="$tab" data-value="static-gradient" data-is-image-hidden="false">
               ${tabs.map(it => {
                 return `
-                  <span 
-                    class='picker-tab-item ${it.selected ? "selected" : ''}' 
+                  <span
+                    class='picker-tab-item ${it.selected ? "selected" : ''}'
                     data-selected-value='${it.type}'
                     title='${it.title}'
-                  > 
+                  >
                   <div class='icon'></div>
                   </span>`;
               }).join('')}
@@ -140,7 +140,7 @@ export default class DefaultGradientPicker extends BaseColorPicker {
           <template target="EmbedColorPicker"></template>
         </div>
       </div>
-     
+
     `;
   }
 
@@ -150,7 +150,7 @@ export default class DefaultGradientPicker extends BaseColorPicker {
 
     var value = this.image.getColorString()
 
-    return value; 
+    return value;
   }
 
   'mousedown $gradientView' (e) {
@@ -187,7 +187,7 @@ export default class DefaultGradientPicker extends BaseColorPicker {
 
   getCurrentStepColor() {
     var colorstep = this.image.colorsteps[this.selectColorStepIndex || 0] || {color: 'rgba(0, 0, 0, 1)'};
-    return colorstep.color; 
+    return colorstep.color;
   }
 
   '@changeGradientEditor' (data) {
@@ -197,7 +197,7 @@ export default class DefaultGradientPicker extends BaseColorPicker {
         color: it.color,
         percent: it.offset.value,
         cut: it.cut,
-        index: (index + 1)  * 100 
+        index: (index + 1)  * 100
       })
     })
 
@@ -221,20 +221,20 @@ export default class DefaultGradientPicker extends BaseColorPicker {
   }
 
   selectTabContent(type) {
-    this.selectedTab = type;    
+    this.selectedTab = type;
     this.refs.$tab.attr("data-value", type);
 
     this.image = this.createGradient({ type }, this.image);
 
 
-    this.$store.emit('setGradientEditor',   this.getColorString(), this.selectColorStepIndex, this.image.type, this.image.angle, this.image.radialPosition, this.image.radialType)   
+    this.$store.emit('setGradientEditor',   this.getColorString(), this.selectColorStepIndex, this.image.type, this.image.angle, this.image.radialPosition, this.image.radialType)
 
     var color = this.getCurrentStepColor();
 
     this['@selectColorStep'](color);
 
 
-    this.updateGradientPreview();    
+    this.updateGradientPreview();
 
   }
 
@@ -287,7 +287,7 @@ export default class DefaultGradientPicker extends BaseColorPicker {
   }
 
 
-  '@changeEmbedColorPicker' (color) { 
+  '@changeEmbedColorPicker' (color) {
     this.$store.emit('setColorStepColor', color);
   }
 
@@ -308,7 +308,7 @@ export default class DefaultGradientPicker extends BaseColorPicker {
   updateGradientPreview () {
     if (this.image) {
       this.refs.$gradientView.css('background-image', this.image.toString())
-      this.updateData();      
+      this.updateData();
     }
 
   }
