@@ -1,5 +1,5 @@
 import Color from '@easylogic/color';
-import BaseModule from '~/colorpicker/BaseModule';
+import BaseModule from '../BaseModule';
 
 export default class ColorManager extends BaseModule {
 

@@ -1,7 +1,7 @@
-import BaseColorPicker from '~/colorpicker/BaseColorPicker';
-import PaletteWheel from '~/colorpicker/ui/PaletteWheel';
-import Swatch from '~/colorpicker/ui/Swatch';
-import Forms from '~/colorpicker/ui/ColorInformation';
+import BaseColorPicker from '../../BaseColorPicker';
+import PaletteWheel from '../../ui/PaletteWheel';
+import Swatch from '../../ui/Swatch';
+import Forms from '../../ui/ColorInformation';
 import Control from './Control';
 import './index.scss';
 

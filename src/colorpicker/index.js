@@ -1,8 +1,8 @@
-import Default from '~/colorpicker/theme/default';
-import CircleColorPicker from '~/colorpicker/theme/circle';
-import RingColorPicker from '~/colorpicker/theme/ring';
-import MiniColorPicker from '~/colorpicker/theme/mini';
-import NoneColorPicker from '~/colorpicker/theme/none';
+import Default from './theme/default';
+import CircleColorPicker from './theme/circle';
+import RingColorPicker from './theme/ring';
+import MiniColorPicker from './theme/mini';
+import NoneColorPicker from './theme/none';
 import defaults from './defaults';
 
 /**

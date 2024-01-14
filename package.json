@@ -1,6 +1,6 @@
 {
-  "name": "@easylogic/colorpicker",
-  "version": "2.1.4",
+  "name": "@r2-d1/colorpicker",
+  "version": "1.0.0",
   "description": "simple colorpicker used anywhere",
   "main": "src/colorpicker/index.js",
   "scripts": {
@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/easylogic/colorpicker.git"
+    "url": "git+https://github.com/R2-D1/colorpicker.git"
   },
   "keywords": [
     "colorview",
@@ -29,23 +29,11 @@
     "palette"
   ],
   "author": "easylogic",
-  "contributors": [
-    {
-      "name": "easylogic",
-      "email": "cyberuls@gmail.com",
-      "url": "https://colorpicker.easylogic.studio"
-    },
-    {
-      "name": "redgoose",
-      "email": "scripter@me.com",
-      "url": "https://redgoose.me"
-    }
-  ],
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/easylogic/easylogic-colorpicker/issues"
+    "url": "https://github.com/R2-D1/colorpicker/issues"
   },
-  "homepage": "https://colorpicker.easylogic.studio/",
+  "homepage": "https://github.com/R2-D1/colorpicker",
   "browserslist": [
     "> 1%",
     "last 2 versions"

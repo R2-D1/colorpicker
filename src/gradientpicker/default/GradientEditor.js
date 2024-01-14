@@ -1,6 +1,6 @@
 import Color from "@easylogic/color";
-import UIElement from "~/colorpicker/UIElement";
-import { calculateAngle, round } from "~/util/functions/math";
+import UIElement from "../../colorpicker/UIElement";
+import { calculateAngle, round } from "../../util/functions/math";
 import { Length } from "./Length";
 
 
@@ -13,8 +13,8 @@ var radialTypeList = [
   'ellipse',
   'ellipse closest-side',
   'ellipse closest-corner',
-  'ellipse farthest-side', 
-  'ellipse farthest-corner' 
+  'ellipse farthest-side',
+  'ellipse farthest-corner'
 ]
 
 export default class GradientEditor extends UIElement  {
@@ -26,7 +26,7 @@ export default class GradientEditor extends UIElement  {
     var colorsteps = [
       { offset: Length.percent(0), cut: false, color: 'yellow' },
       { offset: Length.percent(100), cut: false, color: 'red' }
-    ] 
+    ]
 
     this.type = 'linear-gradient'
     this.index = 0
@@ -44,7 +44,7 @@ export default class GradientEditor extends UIElement  {
     }
 
     this.reloadInputValue();
-  }  
+  }
 
   '@setGradientEditor' (str, index = 0, type = 'linear-gradient', angle, radialPosition, radialType) {
     var results = Color.convertMatches(str);
@@ -52,9 +52,9 @@ export default class GradientEditor extends UIElement  {
       var [color, offset1, offset2 ] = it.split(' ').filter(str => str.length);
 
        color = Color.reverseMatches(color, results.matches);
-      var cut = false; 
+      var cut = false;
       if (offset2) {
-        cut = true; 
+        cut = true;
       }
 
       var offset = cut ? Length.parse(offset2) : Length.parse(offset1)
@@ -80,7 +80,7 @@ export default class GradientEditor extends UIElement  {
 
     this.colorsteps = colorsteps;
     this.index = index;
-    this.type = type; 
+    this.type = type;
     this.angle = Length.parse(angle || '90deg');
     this.radialPosition = radialPosition || [Length.percent(50), Length.percent(50)]
     this.radialType = radialType
@@ -97,29 +97,29 @@ export default class GradientEditor extends UIElement  {
     return /*html*/`
         <div class='gradient-editor' data-selected-editor='${this.type}'>
             <div class='gradient-steps' data-editor='gradient'>
-                <div class="hue-container" ref="$back"></div>            
+                <div class="hue-container" ref="$back"></div>
                 <div class="hue" ref="$steps">
                     <div class='step-list' ref="$stepList" ></div>
                 </div>
             </div>
-            <div class='sub-editor' ref='$subEditor'> 
+            <div class='sub-editor' ref='$subEditor'>
               <div class='tools' data-editor='tools'>
                 <label>Offset</label>
                 <div class='unit'>
                   <div><label for="cut"> <input type='checkbox' ref='$cut' id="cut" checked /> connected</label></div>
-                  <div class="right-menu" ><button type="button" ref="$remove" style="float:right;" title="Remove color stop">&times;</button></div>                  
+                  <div class="right-menu" ><button type="button" ref="$remove" style="float:right;" title="Remove color stop">&times;</button></div>
                 </div>
-              </div>            
+              </div>
               <div data-editor='angle'>
-                <label>Angle</label>
-                <div class='unit'>                
+                <label>Кут</label>
+                <div class='unit'>
                   <div><input type='range' data-key='angle' min='-720' max="720" step='0.1' ref='$angle' /> </div>
-                  <div><input type='number' data-key='angle' min='-720' max="720" step='0.1' ref='$angleNumber' /></div> 
+                  <div><input type='number' data-key='angle' min='-720' max="720" step='0.1' ref='$angleNumber' /></div>
                   <span>deg</span>
                 </div>
               </div>
               <div data-editor='centerX'>
-                <label>Center X</label>
+                <label>По горизонталі</label>
                 <div class='unit'>
                   <div><input type='range' data-key='centerX' min='-100' max="100" step='0.1' ref='$centerX' /></div>
                   <div><input type='number' data-key='centerX' min='-100' max="100" step='0.1' ref='$centerXNumber' /></div>
@@ -129,9 +129,9 @@ export default class GradientEditor extends UIElement  {
                       <option value='em'>em</option>
                     </select></div>
                 </div>
-              </div>                
-              <div data-editor='centerY'>           
-                <label>Center Y</label>                 
+              </div>
+              <div data-editor='centerY'>
+                <label>По вертикалі</label>
                 <div class='unit'>
                   <div><input type='range' data-key='centerY' min='-100' max="100" step='0.1' ref='$centerY' /></div>
                   <div><input type='number' data-key='centerX' min='-100' max="100" step='0.1' ref='$centerYNumber' /></div>
@@ -141,9 +141,9 @@ export default class GradientEditor extends UIElement  {
                       <option value='em'>em</option>
                     </select></div>
                 </div>
-              </div>                
-              <div data-editor='radialType'>       
-                <label>Type</label>              
+              </div>
+              <div data-editor='radialType'>
+                <label>Type</label>
                 <div><select ref='$radialType'>
                   ${radialTypeList.map(k => {
                       var selected = this.radialType === k ? 'selected' : '';
@@ -151,39 +151,39 @@ export default class GradientEditor extends UIElement  {
                   }).join('')}
                 </select></div>
               </div>
-            </div>            
+            </div>
         </div>
       `;
   }
 
 
   'input $angle' (e) {
-    this.refs.$angleNumber.val(this.refs.$angle.val())        
+    this.refs.$angleNumber.val(this.refs.$angle.val())
     this['@changeKeyValue'] ('angle', Length.deg(this.refs.$angle.val()))
-  }  
+  }
 
   'input $angleNumber' (e) {
-    this.refs.$angle.val(this.refs.$angleNumber.val())        
+    this.refs.$angle.val(this.refs.$angleNumber.val())
     this['@changeKeyValue'] ('angle', Length.deg(this.refs.$angle.val()))
-  }    
+  }
 
   'input $centerX' (e) {
-    this.refs.$centerXNumber.val(this.refs.$centerX.val())    
+    this.refs.$centerXNumber.val(this.refs.$centerX.val())
     this['@changeKeyValue'] ('radialPositionX')
   }
   'input $centerXNumber' (e) {
     this.refs.$centerX.val(this.refs.$centerXNumber.val())
     this['@changeKeyValue'] ('radialPositionX')
-  }  
+  }
 
   'input $centerY' (e) {
-    this.refs.$centerYNumber.val(this.refs.$centerY.val())        
+    this.refs.$centerYNumber.val(this.refs.$centerY.val())
     this['@changeKeyValue'] ('radialPositionY')
-  }  
+  }
   'input $centerYNumber' (e) {
     this.refs.$centerY.val(this.refs.$centerYNumber.val())
     this['@changeKeyValue'] ('radialPositionX')
-  }  
+  }
 
   'change $centerXSelect' (e) {
 
@@ -192,7 +192,7 @@ export default class GradientEditor extends UIElement  {
 
   'change $centerYSelect' (e) {
     this['@changeKeyValue'] ('radialPositionY')
-  }  
+  }
 
   get radialPositionX () {
     return new Length(+this.refs.$centerX.val(), this.refs.$centerXSelect.val())
@@ -200,7 +200,7 @@ export default class GradientEditor extends UIElement  {
 
   get radialPositionY () {
     return new Length(+this.refs.$centerY.val(), this.refs.$centerYSelect.val())
-  }  
+  }
 
   'change $radialType' (e) {
     this['@changeKeyValue'] ('radialType', this.refs.$radialType.val())
@@ -209,11 +209,11 @@ export default class GradientEditor extends UIElement  {
   '@changeKeyValue' (key, value) {
 
     if (key === 'angle') {
-      value = value.value; 
-    } 
+      value = value.value;
+    }
 
     if (key === 'radialPositionX' || key === 'radialPositionY') {
-      this['radialPosition'] = [this.radialPositionX, this.radialPositionY] 
+      this['radialPosition'] = [this.radialPositionX, this.radialPositionY]
     } else {
       this[key] = value;
     }
@@ -226,28 +226,28 @@ export default class GradientEditor extends UIElement  {
       this.currentStep.offset = value.clone();
       this.$currentStep.css({
         left: this.currentStep.offset
-      })  
+      })
       this.setColorUI()
-      this.updateData();      
+      this.updateData();
     }
   }
 
   'click $back' (e) {
-    if (this.startXY) return; 
+    if (this.startXY) return;
 
     var rect = this.refs.$stepList.rect()
-    
+
     var minX = rect.x;
     var maxX = rect.right;
 
-    var x = e.xy.x 
+    var x = e.xy.x
 
     if (x < minX)  x = minX
     else if (x > maxX) x = maxX
     var percent = (x - minX) / rect.width * 100;
 
 
-    var list = this.colorsteps.map((it, index) => { 
+    var list = this.colorsteps.map((it, index) => {
       return {index, color : it.color, offset: it.offset}
     })
 
@@ -256,29 +256,29 @@ export default class GradientEditor extends UIElement  {
 
     if (prev && next) {
       this.colorsteps.splice(next.index, 0, {
-        cut: false, 
+        cut: false,
         offset: Length.percent(percent),
         color: Color.mix(prev.color, next.color, ( percent - prev.offset.value )/(next.offset.value - prev.offset.value))
       })
     } else if (prev) {
       this.colorsteps.splice(prev.index+1, 0, {
-        cut: false, 
+        cut: false,
         offset: Length.percent(percent),
         color: 'rgba(0, 0, 0, 1)'
-      })      
+      })
     } else if (next) {
       this.colorsteps.splice(next.index-1, 0, {
-        cut: false, 
+        cut: false,
         offset: Length.percent(percent),
         color: 'rgba(0, 0, 0, 1)'
-      })      
+      })
     } else {
       this.colorsteps.push({
-        cut: false, 
+        cut: false,
         offset: Length.percent(0),
         color: 'rgba(0, 0, 0, 1)'
-      })            
-    } 
+      })
+    }
 
     this.refresh();
     this.updateData();
@@ -298,8 +298,8 @@ export default class GradientEditor extends UIElement  {
       this.currentStep.cut = this.refs.$cut.checked()
       this.$currentStep.attr('data-cut', this.currentStep.cut);
       this.setColorUI()
-      this.updateData();      
-    } 
+      this.updateData();
+    }
   }
 
   'click $remove' () {
@@ -307,27 +307,27 @@ export default class GradientEditor extends UIElement  {
   }
 
   removeStep(index) {
-    // if (this.colorsteps.length === 2) return; 
+    // if (this.colorsteps.length === 2) return;
     this.colorsteps.splice(index, 1);
     var currentStep = this.colorsteps[index]
-    var currentIndex = index; 
+    var currentIndex = index;
     if (!currentStep) {
       currentStep = this.colorsteps[index-1]
-      currentIndex = index - 1; 
+      currentIndex = index - 1;
     }
 
     if (currentStep) {
       this.selectStep(currentIndex);
     }
     this.refresh();
-    this.updateData();          
+    this.updateData();
   }
 
 
   selectStep(index) {
-    this.index = index; 
+    this.index = index;
     this.currentStep = this.colorsteps[index];
-    this.refs.$stepList.attr('data-selected-index', index);    
+    this.refs.$stepList.attr('data-selected-index', index);
     this.$currentStep = this.refs.$stepList.$(`[data-index="${index.toString()}"]`)
     if (this.$currentStep) {
       this.$colorView = this.$currentStep.$('.color-view');
@@ -346,7 +346,7 @@ export default class GradientEditor extends UIElement  {
 
     if (e.altKey) {
       this.removeStep(index);
-      // return false; 
+      // return false;
     } else {
 
       this.selectStep(index);
@@ -368,22 +368,22 @@ export default class GradientEditor extends UIElement  {
 
   'mouseup document' (e) {
     if (this.startXY) {
-      this.startXY = null; 
+      this.startXY = null;
     }
   }
 
-  'mousemove document' (e) { 
-    if (!this.startXY) return; 
+  'mousemove document' (e) {
+    if (!this.startXY) return;
 
     var dx = e.xy.x - this.startXY.x;
     var dy = e.xy.y - this.startXY.y;
 
     var rect = this.getStepListRect()
-    
+
     var minX = rect.x;
     var maxX = rect.right;
 
-    var x = this.startXY.x + dx 
+    var x = this.startXY.x + dx
 
     if (x < minX)  x = minX
     else if (x > maxX) x = maxX
@@ -407,9 +407,9 @@ export default class GradientEditor extends UIElement  {
     this.$currentStep.css({
       left: Length.percent(percent)
     })
-    // this.refs.$offset.val(this.currentStep.offset.value);    
+    // this.refs.$offset.val(this.currentStep.offset.value);
     this.setColorUI()
-    this.updateData();    
+    this.updateData();
   }
 
 
@@ -458,7 +458,7 @@ export default class GradientEditor extends UIElement  {
 
     this.refs.$angle.val(this.angle.value);
     this.refs.$angleNumber.val(this.angle.value);
-    
+
 
     const radialPosition = this.radialPosition.map(it => {
       if (it === 'center') {
@@ -475,7 +475,7 @@ export default class GradientEditor extends UIElement  {
 
     this.refs.$centerY.val(radialPosition[1].value);
     this.refs.$centerYNumber.val(radialPosition[1].value);
-    this.refs.$centerYSelect.val(radialPosition[1].unit);        
+    this.refs.$centerYSelect.val(radialPosition[1].unit);
 
     this.refs.$radialType.val(this.radialType);
   }
@@ -489,7 +489,7 @@ export default class GradientEditor extends UIElement  {
       })
       this.$arrow.css({
         'background-color': color
-      })      
+      })
       this.setColorUI()
       this.updateData();
     }

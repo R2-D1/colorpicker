@@ -1,6 +1,6 @@
-import UIElement from '~/colorpicker/UIElement';
-import Event from '~/util/Event'
-import Dom from '~/util/Dom';
+import UIElement from '../UIElement';
+import Event from '../../util/Event'
+import Dom from '../../util/Dom';
 import './Palette.scss';
 
 export default class Palette extends UIElement {

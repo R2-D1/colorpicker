@@ -1,4 +1,4 @@
-import UIElement from '~/colorpicker/UIElement';
+import UIElement from '../UIElement';
 import { enableEyeDropper } from '~/util/functions/support';
 import './Eyedropper.scss';
 

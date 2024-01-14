@@ -1,6 +1,6 @@
-import UIElement from '~/colorpicker/UIElement';
-import HueVertical from '~/colorpicker/ui/control/HueVertical';
-import OpacityVertical from '~/colorpicker/ui/control/OpacityVertical';
+import UIElement from '../../UIElement';
+import HueVertical from '../../ui/control/HueVertical';
+import OpacityVertical from '../../ui/control/OpacityVertical';
 
 export default class Control extends UIElement {
 

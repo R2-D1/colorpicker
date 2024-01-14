@@ -7,7 +7,7 @@ import './assets/app.scss';
 /** @var {string} ROUTE */
 
 // initial route
-const initialRoute = ROUTE || 'basic'; // basic,themes,gradientPicker
+const initialRoute = ROUTE || 'gradientPicker'; // basic,themes,gradientPicker
 
 window.picker = null;
 const $buttonsRoute = document.querySelectorAll('.layout-header__nav > button');

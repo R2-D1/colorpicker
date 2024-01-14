@@ -1,10 +1,10 @@
-import UIElement from '~/colorpicker/UIElement';
-import Hue from '~/colorpicker/ui/control/Hue';
-import Brightness from '~/colorpicker/ui/control/Brightness';
-import Opacity from '~/colorpicker/ui/control/Opacity';
-import ColorPreview from '~/colorpicker/ui/ColorPreview';
-import Eyedropper from '~/colorpicker/ui/Eyedropper';
-import { enableEyeDropper } from '~/util/functions/support';
+import UIElement from '../../UIElement';
+import Hue from '../../ui/control/Hue';
+import Brightness from '../../ui/control/Brightness';
+import Opacity from '../../ui/control/Opacity';
+import ColorPreview from '../../ui/ColorPreview';
+import Eyedropper from '../../ui/Eyedropper';
+import { enableEyeDropper } from '../../../util/functions/support';
 
 export default class Control extends UIElement {
 

@@ -1,8 +1,8 @@
 import Dom from '~/util/Dom';
-import UIElement from '~/colorpicker/UIElement';
-import ColorManager from '~/colorpicker/module/ColorManager';
-import ColorSwatch from '~/colorpicker/module/ColorSwatch';
-import BaseStore from '~/colorpicker/BaseStore';
+import UIElement from './UIElement';
+import ColorManager from './module/ColorManager';
+import ColorSwatch from './module/ColorSwatch';
+import BaseStore from './BaseStore';
 
 export default class BaseColorPicker extends UIElement {
 
