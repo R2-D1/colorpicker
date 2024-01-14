@@ -1,5 +1,5 @@
 import Color from '@easylogic/color';
-import VerticalSlider from '~/colorpicker/VerticalSlider';
+import VerticalSlider from '../../../colorpicker/VerticalSlider';
 
 export default class Opacity extends VerticalSlider {
 

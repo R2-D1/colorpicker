@@ -2,7 +2,7 @@ import Color from "@easylogic/color";
 import { Gradient } from "./Gradient";
 import { Length } from "../Length";
 import { ColorStep } from "./ColorStep";
-import { isUndefined, isNumber } from '~/util/functions/func';
+import { isUndefined, isNumber } from '../../../util/functions/func';
 
 const DEFINED_DIRECTIONS = {
   "0": "to top",
@@ -13,7 +13,7 @@ const DEFINED_DIRECTIONS = {
   "225": "to bottom left",
   "270": "to left",
   "315": "to top left"
-}; 
+};
 
 const DEFINED_ANGLES = {
   "to top": "0",
@@ -50,7 +50,7 @@ export class LinearGradient extends Gradient {
   }
 
   toString() {
-    if(this.colorsteps.length === 0) return '';        
+    if(this.colorsteps.length === 0) return '';
     var colorString = this.getColorString();
 
     var opt = '';
@@ -115,4 +115,3 @@ export class LinearGradient extends Gradient {
     return new LinearGradient({ angle, colorsteps });
   }
 }
- 

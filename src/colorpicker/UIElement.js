@@ -1,4 +1,4 @@
-import EventMachine from '~/util/EventMachine';
+import EventMachine from '../util/EventMachine';
 
 const CHECK_STORE_EVENT_PATTERN = /^@/;
 

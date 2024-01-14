@@ -1,4 +1,4 @@
-import Event from '~/util/Event';
+import Event from '../util/Event';
 import BaseBox from './BaseBox';
 
 export default class BaseSlider extends BaseBox {

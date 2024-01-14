@@ -1,4 +1,4 @@
-import BaseModule from '~/colorpicker/BaseModule';
+import BaseModule from '../../colorpicker/BaseModule';
 
 export default class ColorSwatch extends BaseModule {
 

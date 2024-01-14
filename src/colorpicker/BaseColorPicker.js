@@ -1,4 +1,4 @@
-import Dom from '~/util/Dom';
+import Dom from '../util/Dom';
 import UIElement from './UIElement';
 import ColorManager from './module/ColorManager';
 import ColorSwatch from './module/ColorSwatch';

@@ -1,4 +1,4 @@
-import Default from '~/gradientpicker/default';
+import Default from '../gradientpicker/default';
 import defaults from './defaults';
 
 /**

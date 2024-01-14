@@ -1,5 +1,5 @@
 import UIElement from '../UIElement';
-import { enableEyeDropper } from '~/util/functions/support';
+import { enableEyeDropper } from '../../util/functions/support';
 import './Eyedropper.scss';
 
 export default class Eyedropper extends UIElement {
