@@ -1,5 +1,5 @@
-import { isString, isNotUndefined } from "~/util/functions/func";
-import { round } from "~/util/functions/math";
+import { isString, isNotUndefined } from "../../util/functions/func";
+import { round } from "../../util/functions/math";
 
 const stringToPercent = {
   center: 50,
@@ -87,7 +87,7 @@ export class Length {
 
   static ms (value) {
     return new Length(+value, 'ms')
-  }  
+  }
 
   static var (value) {
     return new Length(value+'', '--')
@@ -181,8 +181,8 @@ export class Length {
           value = obj.value;
         }
 
-        return Length.ms(value);       
-        
+        return Length.ms(value);
+
       } else if (obj.unit == "number") {
         var value = 0;
 
@@ -191,7 +191,7 @@ export class Length {
         }
 
         return Length.number(value);
-        
+
       } else if (obj.unit == "--") {
         var value = 0;
 
@@ -199,7 +199,7 @@ export class Length {
           value = obj.value;
         }
 
-        return Length.var(value);        
+        return Length.var(value);
       } else if (obj.unit === "" || obj.unit === "string") {
         var value = "";
 
@@ -222,18 +222,18 @@ export class Length {
     switch(this.unit) {
     case 'string':
     case 'number':
-      return this.value + '' 
+      return this.value + ''
     case 'var':
         return `var(--${this.value})`
     case 'calc':
       return `calc(${this.value})`;
     default:
-      return this.value + this.unit; 
+      return this.value + this.unit;
     }
   }
 
   isUnitType(unit) {
-    return this.unit === unit; 
+    return this.unit === unit;
   }
 
   isCalc() { return this.isUnitType('calc'); }
@@ -350,7 +350,7 @@ export class Length {
 
   toSecond () {
     if (this.isSecond()) {
-      return this; 
+      return this;
     } else if (this.isMs()) {
       return Length.second(this.value/1000);
     }
@@ -360,7 +360,7 @@ export class Length {
     if (this.isSecond()) {
       return Length.ms(this.value * 1000);
     } else if (this.isMs()) {
-      return this; 
+      return this;
     }
   }
 
@@ -397,7 +397,7 @@ export class Length {
   }
 
   equals (t) {
-    return this.value === t.value && this.unit === t.unit; 
+    return this.value === t.value && this.unit === t.unit;
   }
 }
 

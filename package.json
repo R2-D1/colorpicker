@@ -1,8 +1,8 @@
 {
   "name": "@r2-d1/colorpicker",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "simple colorpicker used anywhere",
-  "main": "src/colorpicker/index.js",
+  "main": "src/index.js",
   "scripts": {
     "dev": "webpack serve --progress --mode development",
     "prebuild": "rm -rf dist",
