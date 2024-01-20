@@ -2,7 +2,9 @@
 
 .gradient-picker {
   box-sizing: border-box;
-  border: 1px solid #ececec;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+
   .gradient-body {
     display: grid;
     grid-template-columns: 1fr 224px;
@@ -36,6 +38,7 @@
     height: 150px;
     position: relative;
     overflow: hidden;
+    border-radius: 5px;
     @include mixins.transparent-background();
     .gradient-view {
       position: absolute;

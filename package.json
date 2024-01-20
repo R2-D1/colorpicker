@@ -1,6 +1,6 @@
 {
   "name": "@r2-d1/colorpicker",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "simple colorpicker and gradient picker",
   "main": "src/index.js",
   "scripts": {

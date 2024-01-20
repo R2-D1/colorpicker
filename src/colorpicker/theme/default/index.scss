@@ -9,8 +9,7 @@
     &,
     &:before,
     &:after {
-      border-top-left-radius: var(--size-radius);
-      border-top-right-radius: var(--size-radius);
+      border-radius: 5px;
     }
   }
   .el-cp-color-control {
