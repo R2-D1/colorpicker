@@ -2,7 +2,9 @@ import Color from '@easylogic/color';
 import { Gradient } from "./Gradient";
 import { Position, Length } from "../Length";
 import { isNotUndefined } from "../../../util/functions/func";
+import { isUndefined } from '../../../util/functions/func';
 import { ColorStep } from "./ColorStep";
+import { isString } from "../../../util/functions/func";
 
 
 const DEFINED_POSITIONS = {
@@ -11,7 +13,7 @@ const DEFINED_POSITIONS = {
   ["left"]: true,
   ["right"]: true,
   ["bottom"]: true
-}; 
+};
 
 const DEFINED_ANGLES = {
   "to top": 0,
@@ -50,7 +52,7 @@ export class ConicGradient extends Gradient {
   }
 
   getColorString() {
-    if(this.colorsteps.length === 0) return '';        
+    if(this.colorsteps.length === 0) return '';
     var colorsteps = this.colorsteps;
     if (!colorsteps) return '';
 

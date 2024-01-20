@@ -67,6 +67,8 @@ function changeRoute(name) {
       picker = new GradientPicker({
         container: document.getElementById(`gradientPicker`),
         ...options.gradientPicker,
+        gradient: 'conic-gradient(from 90deg at 50% 50%, #FFFFFF 0deg, black 360deg)',
+        // gradient: 'repeating-radial-gradient(ellipse at 50% 50%, #9D4D4D 0%,black 100%)',
       })
       controller.initEvent(picker.EmbedColorPicker.colorPicker);
       break;
