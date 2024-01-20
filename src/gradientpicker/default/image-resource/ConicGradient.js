@@ -179,6 +179,7 @@ export class ConicGradient extends Gradient {
         }
       });
 
+    angle.value = angle.unit;
     return new ConicGradient({ angle, radialPosition, colorsteps });
   }
 }
