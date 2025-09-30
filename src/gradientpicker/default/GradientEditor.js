@@ -488,6 +488,9 @@ export default class GradientEditor extends UIElement {
   }
 
   reloadInputValue() {
+    if (!this.refs?.$angle || !this.refs?.$angleNumber) {
+      return;
+    }
     // this.refs.$offset.val(this.currentStep.offset.value);
     // this.refs.$offsetNumber.val(this.currentStep.offset.value);
     // this.refs.$offsetSelect.val(this.currentStep.offset.unit);

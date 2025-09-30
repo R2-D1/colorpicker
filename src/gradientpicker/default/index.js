@@ -99,6 +99,11 @@ export default class DefaultGradientPicker extends BaseColorPicker {
     this.selectTabContent(this.image.type);
   }
 
+  // keep parity with the ColourPicker API where setValue updates the current selection
+  setValue(gradientString) {
+    this.setGradient(gradientString);
+  }
+
   /**
    * get color
    *
