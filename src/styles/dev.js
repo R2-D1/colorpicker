@@ -1,0 +1,15 @@
+import '../scss/index.scss';
+import '../colorpicker/ui/control/ColorSlider.scss';
+import '../colorpicker/ui/Palette.scss';
+import '../colorpicker/ui/ColorInformation.scss';
+import '../colorpicker/ui/ColorPreview.scss';
+import '../colorpicker/ui/PaletteRing.scss';
+import '../colorpicker/ui/PaletteWheel.scss';
+import '../colorpicker/ui/Eyedropper.scss';
+import '../colorpicker/ui/Swatch.scss';
+import '../colorpicker/theme/default/index.scss';
+import '../colorpicker/theme/ring/index.scss';
+import '../colorpicker/theme/mini/index.scss';
+import '../colorpicker/theme/circle/index.scss';
+import '../colorpicker/theme/none/index.scss';
+import '../gradientpicker/default/index.scss';

@@ -1,6 +1,4 @@
 import VerticalSlider from '../../VerticalSlider';
-import './ColorSlider.scss';
-
 export default class HueVertical extends VerticalSlider {
 
   constructor(opt) {

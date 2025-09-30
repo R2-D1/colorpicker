@@ -3,8 +3,6 @@ import PaletteWheel from '../../ui/PaletteWheel';
 import Swatch from '../../ui/Swatch';
 import Forms from '../../ui/ColorInformation';
 import Control from './Control';
-import './index.scss';
-
 export default class CircleColorPicker extends BaseColorPicker {
 
   components() {

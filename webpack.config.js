@@ -99,7 +99,7 @@ const config = (env, options) => {
    */
   if (!dev) {
     out.entry = {
-      'EasyLogicColorPicker': './src/index.js',
+      'EasyLogicColorPicker': ['./src/index.js', './src/styles/dev.js'],
     };
     out.output = {
       path: __dirname + '/dist',

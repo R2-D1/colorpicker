@@ -1,6 +1,4 @@
 import BaseSlider from '../../../colorpicker/BaseSlider';
-import './ColorSlider.scss';
-
 export default class Hue extends BaseSlider {
 
   constructor(opt) {

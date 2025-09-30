@@ -2,7 +2,6 @@ import Color from '@easylogic/color';
 import BaseColorPicker from '../../colorpicker/BaseColorPicker';
 import EmbedColorPicker from './EmbedColorPicker';
 import GradientEditor from './GradientEditor';
-import './index.scss';
 import { RepeatingLinearGradient } from './image-resource/RepeatingLinearGradient';
 import { LinearGradient } from './image-resource/LinearGradient';
 import { RepeatingRadialGradient } from './image-resource/RepeatingRadialGradient';

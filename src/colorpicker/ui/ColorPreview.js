@@ -1,6 +1,4 @@
 import UIElement from '../UIElement';
-import './ColorPreview.scss';
-
 export default class ColorPreview extends UIElement {
 
   template() {

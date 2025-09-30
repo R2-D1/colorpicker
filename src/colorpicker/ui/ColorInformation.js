@@ -1,6 +1,4 @@
 import UIElement from '../UIElement';
-import './ColorInformation.scss';
-
 export default class ColorInformation extends UIElement {
 
   template() {

@@ -1,4 +1,4 @@
-import ColorPicker, { GradientPicker } from '~/index';
+import ColorPicker, { GradientPicker } from '~/index.dev';
 import options from './options';
 import * as controller from './controller';
 import * as storage from './storage';
