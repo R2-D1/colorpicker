@@ -4,7 +4,7 @@ import Palette from '../../../colorpicker/ui/Palette';
 import Forms from '../../../colorpicker/ui/ColorInformation';
 import Swatch from '../../../colorpicker/ui/Swatch';
 import Control from './Control';
-import './index.scss';
+import './index.css';
 
 export default class RingColorPicker extends BaseColorPicker {
 

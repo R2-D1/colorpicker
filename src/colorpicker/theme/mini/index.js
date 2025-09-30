@@ -2,7 +2,7 @@ import BaseColorPicker from '../../../colorpicker/BaseColorPicker';
 import Palette from '../../../colorpicker/ui/Palette';
 import Swatch from '../../../colorpicker/ui/Swatch';
 import Control from './Control';
-import './index.scss';
+import './index.css';
 
 export default class MiniColorPicker extends BaseColorPicker {
 

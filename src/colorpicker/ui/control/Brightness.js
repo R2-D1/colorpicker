@@ -1,5 +1,5 @@
 import BaseSlider from '../../../colorpicker/BaseSlider';
-import './ColorSlider.scss';
+import './ColorSlider.css';
 
 export default class Brightness extends BaseSlider {
 

@@ -1,0 +1,115 @@
+.el-cp-color-form {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+.el-cp-color-form legend {
+  font-size: 0;
+}
+.el-cp-color-form__wrap {
+  display: flex;
+  margin: 0;
+}
+.el-cp-color-form.hex .el-cp-color-field:nth-child(1) {
+  display: flex;
+}
+.el-cp-color-form.rgb .el-cp-color-field:nth-child(2) {
+  display: flex;
+}
+.el-cp-color-form.hsl .el-cp-color-field:nth-child(3) {
+  display: flex;
+}
+
+.el-cp-color-field {
+  flex: 1;
+  display: none;
+  gap: 4px;
+}
+.el-cp-color-field label {
+  flex: 1;
+  display: block;
+  text-align: center;
+}
+.el-cp-color-field input {
+  display: block;
+  width: 100%;
+  height: 24px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-align: center;
+  box-shadow: inset 0 0 0 1px var(--form-border-color);
+  outline: none;
+  border: none;
+  background: var(--form-bg);
+  border-radius: 2px;
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--color-fill);
+  transition: box-shadow var(--speed-focus) ease-out;
+  -moz-appearance: textfield;
+}
+.el-cp-color-field input:focus {
+  box-shadow: inset 0 1px 5px 0 var(--form-border-color), inset 0 0 0 1px var(--form-border-color), 0 0 0 2px var(--color-key);
+}
+.el-cp-color-field input::-webkit-outer-spin-button, .el-cp-color-field input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+.el-cp-color-field span {
+  display: block;
+  margin: 4px 0 0;
+  font-size: 10px;
+  line-height: 1.15;
+  color: var(--color-blur);
+}
+
+.el-cp-color-nav {
+  margin-left: var(--size-inner-padding);
+}
+.el-cp-color-nav__label {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  width: 36px;
+  height: 24px;
+  margin: 0;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  outline: none;
+  border-radius: 2px;
+  background: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: box-shadow var(--speed-focus) ease-out;
+}
+.el-cp-color-nav__label select {
+  display: block;
+  appearance: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  opacity: 0;
+  outline: none;
+  cursor: pointer;
+}
+.el-cp-color-nav__label svg {
+  display: block;
+  margin: 0 auto;
+  color: var(--color-fill);
+  width: 20px;
+  height: 100%;
+  stroke-width: 1.5px;
+  transition: transform var(--speed-focus) ease-out;
+  transform-origin: 50% 50%;
+}
+.el-cp-color-nav__label:focus-within {
+  box-shadow: 0 0 0 2px var(--color-key);
+}
+.el-cp-color-nav__label:active svg {
+  transform: rotateZ(90deg);
+}
+
+/*# sourceMappingURL=ColorInformation.css.map */

@@ -1,6 +1,6 @@
 import ColorPicker from './colorpicker';
 import GradientPickerUI from './gradientpicker';
-import './scss/index.scss';
+import './scss/index.css';
 
 export const GradientPicker = GradientPickerUI;
 

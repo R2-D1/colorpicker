@@ -1,5 +1,5 @@
 import UIElement from '../UIElement';
-import './ColorPreview.scss';
+import './ColorPreview.css';
 
 export default class ColorPreview extends UIElement {
 

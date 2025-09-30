@@ -3,7 +3,7 @@ import UIElement from '../UIElement';
 import Dom from '../../util/Dom';
 import Event from '../../util/Event';
 import { getXYInCircle, calculateAngle } from '../../util/functions/math';
-import './PaletteWheel.scss';
+import './PaletteWheel.css';
 
 export default class PaletteWheel extends UIElement {
 

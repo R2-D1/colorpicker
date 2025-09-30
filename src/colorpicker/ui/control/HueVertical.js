@@ -1,5 +1,5 @@
 import VerticalSlider from '../../VerticalSlider';
-import './ColorSlider.scss';
+import './ColorSlider.css';
 
 export default class HueVertical extends VerticalSlider {
 

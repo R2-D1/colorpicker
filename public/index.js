@@ -2,7 +2,7 @@ import ColorPicker, { GradientPicker } from '~/index';
 import options from './options';
 import * as controller from './controller';
 import * as storage from './storage';
-import './assets/app.scss';
+import './assets/app.css';
 
 /** @var {string} ROUTE */
 

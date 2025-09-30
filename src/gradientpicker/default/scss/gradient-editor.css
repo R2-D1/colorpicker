@@ -1,0 +1,409 @@
+.gradient-editor {
+  position: relative;
+  user-select: none;
+}
+.gradient-editor .unit {
+  display: grid;
+  grid-template-columns: 70px 50px 50px;
+  grid-column-gap: 2px;
+  font-size: 11px;
+}
+.gradient-editor [data-editor] {
+  display: none;
+  margin-top: 6px;
+}
+.gradient-editor [data-editor] > label {
+  font-size: 11px;
+}
+.gradient-editor:not([data-selected-editor*=static-gradient]) [data-editor=gradient],
+.gradient-editor:not([data-selected-editor*=static-gradient]) [data-editor=tools] {
+  display: block;
+}
+.gradient-editor[data-selected-editor=linear-gradient] [data-editor=angle], .gradient-editor[data-selected-editor=repeating-linear-gradient] [data-editor=angle], .gradient-editor[data-selected-editor=conic-gradient] [data-editor=angle], .gradient-editor[data-selected-editor=repeating-conic-gradient] [data-editor=angle] {
+  display: block;
+}
+.gradient-editor[data-selected-editor=radial-gradient] [data-editor=centerX],
+.gradient-editor[data-selected-editor=radial-gradient] [data-editor=centerY], .gradient-editor[data-selected-editor=repeating-radial-gradient] [data-editor=centerX],
+.gradient-editor[data-selected-editor=repeating-radial-gradient] [data-editor=centerY], .gradient-editor[data-selected-editor=conic-gradient] [data-editor=centerX],
+.gradient-editor[data-selected-editor=conic-gradient] [data-editor=centerY], .gradient-editor[data-selected-editor=repeating-conic-gradient] [data-editor=centerX],
+.gradient-editor[data-selected-editor=repeating-conic-gradient] [data-editor=centerY] {
+  display: block;
+}
+.gradient-editor[data-selected-editor=radial-gradient] [data-editor=radialType], .gradient-editor[data-selected-editor=repeating-radial-gradient] [data-editor=radialType] {
+  display: block;
+}
+.gradient-editor[data-selected-editor=radial-gradient] [data-editor=radialType] select, .gradient-editor[data-selected-editor=repeating-radial-gradient] [data-editor=radialType] select {
+  width: 170px;
+  font-size: 12px;
+  border: none;
+  border-bottom: 1px solid #000;
+  padding: 5px 0;
+}
+.gradient-editor .sub-editor {
+  padding: 0px 8px;
+  padding-bottom: 10px;
+}
+.gradient-editor .sub-editor > div {
+  grid-template-columns: 50px 1fr;
+}
+.gradient-editor .gradient-steps {
+  position: relative;
+  height: 30px;
+}
+.gradient-editor .hue-container,
+.gradient-editor .hue {
+  position: absolute;
+  left: 8px;
+  right: 8px;
+  height: 15px;
+  border-radius: 10px;
+  border: 1px solid var(--gradientpicker-border-color);
+  box-sizing: border-box;
+  background-color: transparent;
+  background-image: linear-gradient(45deg, #ccc 25%, transparent 25%), linear-gradient(-45deg, #ccc 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #ccc 75%), linear-gradient(-45deg, transparent 75%, #ccc 75%);
+  background-size: 10px 10px;
+  background-position: 0 0, 0 5px, 5px -5px, -5px 0px;
+  pointer-events: all;
+}
+.gradient-editor .hue {
+  pointer-events: none;
+}
+.gradient-editor .hue .step-list {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 10px;
+  pointer-events: none;
+}
+.gradient-editor .hue .step-list[data-selected-index="0"] [data-index="0"] {
+  border: 0;
+  transform: translateX(-50%) translateY(70%);
+}
+.gradient-editor .hue .step-list[data-selected-index="0"] [data-index="0"] .arrow {
+  display: block;
+}
+.gradient-editor .hue .step-list[data-selected-index="1"] [data-index="1"] {
+  border: 0;
+  transform: translateX(-50%) translateY(70%);
+}
+.gradient-editor .hue .step-list[data-selected-index="1"] [data-index="1"] .arrow {
+  display: block;
+}
+.gradient-editor .hue .step-list[data-selected-index="2"] [data-index="2"] {
+  border: 0;
+  transform: translateX(-50%) translateY(70%);
+}
+.gradient-editor .hue .step-list[data-selected-index="2"] [data-index="2"] .arrow {
+  display: block;
+}
+.gradient-editor .hue .step-list[data-selected-index="3"] [data-index="3"] {
+  border: 0;
+  transform: translateX(-50%) translateY(70%);
+}
+.gradient-editor .hue .step-list[data-selected-index="3"] [data-index="3"] .arrow {
+  display: block;
+}
+.gradient-editor .hue .step-list[data-selected-index="4"] [data-index="4"] {
+  border: 0;
+  transform: translateX(-50%) translateY(70%);
+}
+.gradient-editor .hue .step-list[data-selected-index="4"] [data-index="4"] .arrow {
+  display: block;
+}
+.gradient-editor .hue .step-list[data-selected-index="5"] [data-index="5"] {
+  border: 0;
+  transform: translateX(-50%) translateY(70%);
+}
+.gradient-editor .hue .step-list[data-selected-index="5"] [data-index="5"] .arrow {
+  display: block;
+}
+.gradient-editor .hue .step-list[data-selected-index="6"] [data-index="6"] {
+  border: 0;
+  transform: translateX(-50%) translateY(70%);
+}
+.gradient-editor .hue .step-list[data-selected-index="6"] [data-index="6"] .arrow {
+  display: block;
+}
+.gradient-editor .hue .step-list[data-selected-index="7"] [data-index="7"] {
+  border: 0;
+  transform: translateX(-50%) translateY(70%);
+}
+.gradient-editor .hue .step-list[data-selected-index="7"] [data-index="7"] .arrow {
+  display: block;
+}
+.gradient-editor .hue .step-list[data-selected-index="8"] [data-index="8"] {
+  border: 0;
+  transform: translateX(-50%) translateY(70%);
+}
+.gradient-editor .hue .step-list[data-selected-index="8"] [data-index="8"] .arrow {
+  display: block;
+}
+.gradient-editor .hue .step-list[data-selected-index="9"] [data-index="9"] {
+  border: 0;
+  transform: translateX(-50%) translateY(70%);
+}
+.gradient-editor .hue .step-list[data-selected-index="9"] [data-index="9"] .arrow {
+  display: block;
+}
+.gradient-editor .hue .step-list[data-selected-index="10"] [data-index="10"] {
+  border: 0;
+  transform: translateX(-50%) translateY(70%);
+}
+.gradient-editor .hue .step-list[data-selected-index="10"] [data-index="10"] .arrow {
+  display: block;
+}
+.gradient-editor .hue .step-list[data-selected-index="11"] [data-index="11"] {
+  border: 0;
+  transform: translateX(-50%) translateY(70%);
+}
+.gradient-editor .hue .step-list[data-selected-index="11"] [data-index="11"] .arrow {
+  display: block;
+}
+.gradient-editor .hue .step-list[data-selected-index="12"] [data-index="12"] {
+  border: 0;
+  transform: translateX(-50%) translateY(70%);
+}
+.gradient-editor .hue .step-list[data-selected-index="12"] [data-index="12"] .arrow {
+  display: block;
+}
+.gradient-editor .hue .step-list[data-selected-index="13"] [data-index="13"] {
+  border: 0;
+  transform: translateX(-50%) translateY(70%);
+}
+.gradient-editor .hue .step-list[data-selected-index="13"] [data-index="13"] .arrow {
+  display: block;
+}
+.gradient-editor .hue .step-list[data-selected-index="14"] [data-index="14"] {
+  border: 0;
+  transform: translateX(-50%) translateY(70%);
+}
+.gradient-editor .hue .step-list[data-selected-index="14"] [data-index="14"] .arrow {
+  display: block;
+}
+.gradient-editor .hue .step-list[data-selected-index="15"] [data-index="15"] {
+  border: 0;
+  transform: translateX(-50%) translateY(70%);
+}
+.gradient-editor .hue .step-list[data-selected-index="15"] [data-index="15"] .arrow {
+  display: block;
+}
+.gradient-editor .hue .step-list[data-selected-index="16"] [data-index="16"] {
+  border: 0;
+  transform: translateX(-50%) translateY(70%);
+}
+.gradient-editor .hue .step-list[data-selected-index="16"] [data-index="16"] .arrow {
+  display: block;
+}
+.gradient-editor .hue .step-list[data-selected-index="17"] [data-index="17"] {
+  border: 0;
+  transform: translateX(-50%) translateY(70%);
+}
+.gradient-editor .hue .step-list[data-selected-index="17"] [data-index="17"] .arrow {
+  display: block;
+}
+.gradient-editor .hue .step-list[data-selected-index="18"] [data-index="18"] {
+  border: 0;
+  transform: translateX(-50%) translateY(70%);
+}
+.gradient-editor .hue .step-list[data-selected-index="18"] [data-index="18"] .arrow {
+  display: block;
+}
+.gradient-editor .hue .step-list[data-selected-index="19"] [data-index="19"] {
+  border: 0;
+  transform: translateX(-50%) translateY(70%);
+}
+.gradient-editor .hue .step-list[data-selected-index="19"] [data-index="19"] .arrow {
+  display: block;
+}
+.gradient-editor .hue .step-list .step {
+  pointer-events: all;
+  width: 15px;
+  height: 15px;
+  border: 1px solid white;
+  box-sizing: border-box;
+  display: inline-block;
+  position: absolute;
+  top: 50%;
+  border-radius: 100%;
+  box-shadow: 0 0 2px 0px rgba(0, 0, 0, 0.5);
+}
+.gradient-editor .hue .step-list .step[data-cut=true] {
+  border-radius: 0%;
+}
+.gradient-editor .hue .step-list .step[data-cut=true] .color-view {
+  border-radius: 0%;
+}
+.gradient-editor .hue .step-list .step {
+  transform: translateX(-50%) translateY(-50%);
+  background-color: transparent;
+  background-image: linear-gradient(45deg, #ccc 25%, transparent 25%), linear-gradient(-45deg, #ccc 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #ccc 75%), linear-gradient(-45deg, transparent 75%, #ccc 75%);
+  background-size: 10px 10px;
+  background-position: 0 0, 0 5px, 5px -5px, -5px 0px;
+}
+.gradient-editor .hue .step-list .step .color-view {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  bottom: 0px;
+  right: 0px;
+  border-radius: 100%;
+  pointer-events: none;
+}
+.gradient-editor .hue .step-list .step .arrow {
+  position: absolute;
+  left: 50%;
+  display: none;
+  top: 0%;
+  width: 5px;
+  height: 5px;
+  transform: translateX(-50%) translateY(-120%);
+  pointer-events: none;
+  clip-path: polygon(40% 0%, 60% 0%, 60% 100%, 40% 100%);
+}
+.gradient-editor input[type=range] {
+  appearance: none;
+  width: 100%;
+  margin: 6.2px 0;
+  background-color: transparent;
+}
+.gradient-editor input[type=range]:focus {
+  outline: none;
+}
+.gradient-editor input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 1px;
+  cursor: pointer;
+  background: var(--range-thumb-color);
+  border-radius: 0px;
+  border: 0px solid #010101;
+}
+.gradient-editor input[type=range]::-webkit-slider-thumb {
+  height: var(--range-thumb-width);
+  width: var(--range-thumb-width);
+  border-radius: 10px;
+  background: var(--range-thumb-color);
+  cursor: pointer;
+  appearance: none;
+  margin-top: -5px;
+}
+.gradient-editor input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #3174ad;
+}
+.gradient-editor input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 1px;
+  cursor: pointer;
+  background: var(--range-thumb-color);
+  border-radius: 0px;
+  border: 0px solid #010101;
+}
+.gradient-editor input[type=range]::-moz-range-thumb {
+  border: 1px solid #000000;
+  height: var(--range-thumb-width);
+  width: var(--range-thumb-height);
+  border-radius: 9px;
+  background: var(--range-thumb-color);
+  cursor: pointer;
+}
+.gradient-editor input[type=range]::-ms-track {
+  width: 100%;
+  height: 1px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+.gradient-editor input[type=range]::-ms-fill-lower {
+  background: var(--range-thumb-color);
+  border: 0px solid #010101;
+  border-radius: 0px;
+  box-shadow: 0px 0px 0px #000000, 0px 0px 0px #0d0d0d;
+}
+.gradient-editor input[type=range]::-ms-fill-upper {
+  background: var(--range-thumb-color);
+  border: 0px solid #010101;
+  border-radius: 0px;
+}
+.gradient-editor input[type=range]::-ms-thumb {
+  height: var(--range-thumb-width);
+  width: var(--range-thumb-height);
+  border-radius: 9px;
+  background: var(--range-thumb-color);
+  cursor: pointer;
+}
+.gradient-editor input[type=range]:focus::-ms-fill-lower {
+  background: var(--range-thumb-color);
+}
+.gradient-editor input[type=range]:focus::-ms-fill-upper {
+  background: var(--range-thumb-color);
+}
+.gradient-editor .right-menu {
+  display: inline-block;
+  float: right;
+}
+.gradient-editor .right-menu button {
+  font-size: 11px;
+  background-color: transparent;
+  border: 0px;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  text-align: center;
+  vertical-align: middle;
+}
+.gradient-editor .right-menu button:hover {
+  background-color: var(--gradientpicker-border-color);
+}
+
+.text-input {
+  border-radius: 0;
+  border: none;
+  border-bottom: 1px solid #444;
+  font-size: 13px;
+}
+
+.select {
+  border: none;
+}
+
+.field {
+  margin-bottom: 5px;
+  background-color: #fff;
+  padding: 9px;
+  border-radius: 5px;
+}
+
+.field .text-input {
+  margin-right: 5px;
+  width: 50px;
+}
+
+.field__label {
+  font-size: 13px;
+}
+
+.field__top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.connect {
+  display: flex;
+  gap: 10px;
+}
+
+.remove-color {
+  text-align: center;
+  padding-bottom: 3px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=gradient-editor.css.map */

@@ -1,6 +1,6 @@
 import PaletteWheel from './PaletteWheel';
 import { calculateAngle } from '../../util/functions/math';
-import './PaletteRing.scss';
+import './PaletteRing.css';
 
 export default class PaletteRing extends PaletteWheel {
 

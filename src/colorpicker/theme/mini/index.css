@@ -1,0 +1,49 @@
+.el-colorpicker--mini {
+  --control-width: 40px;
+}
+.el-colorpicker--mini .el-colorpicker__wrap {
+  position: relative;
+}
+.el-colorpicker--mini .el-colorpicker__body {
+  position: relative;
+  padding-right: var(--control-width);
+}
+.el-colorpicker--mini .el-colorpicker__palette {
+  position: relative;
+  padding-top: 100%;
+}
+.el-colorpicker--mini .el-cp-palette {
+  --palette-width: 100%;
+  --palette-height: 100%;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+}
+.el-colorpicker--mini .el-cp-palette, .el-colorpicker--mini .el-cp-palette:before, .el-colorpicker--mini .el-cp-palette:after {
+  border-top-left-radius: var(--size-radius);
+  border-bottom-left-radius: var(--size-radius);
+}
+.el-colorpicker--mini .el-cp-color-control {
+  --slider-radius: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: var(--control-width);
+  display: flex;
+}
+.el-colorpicker--mini .el-cp-color-control > * {
+  flex: 1;
+}
+.el-colorpicker--mini .el-cp-color-control > *:last-child .el-cp-slider__body:after {
+  border-top-right-radius: var(--size-radius);
+  border-bottom-right-radius: var(--size-radius);
+}
+.el-colorpicker--mini .el-cp-swatches {
+  margin: 0;
+  padding: 16px var(--size-side-padding) 16px;
+}
+
+/*# sourceMappingURL=index.css.map */

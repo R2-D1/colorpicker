@@ -1,6 +1,6 @@
 import BaseColorPicker from '../../BaseColorPicker';
 import Swatch from '../../ui/Swatch';
-import './index.scss';
+import './index.css';
 
 export default class MiniColorPicker extends BaseColorPicker {
 

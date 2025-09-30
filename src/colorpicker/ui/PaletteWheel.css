@@ -1,0 +1,43 @@
+.el-cp-palette-circle {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+}
+.el-cp-palette-circle__wrap {
+  position: relative;
+}
+.el-cp-palette-circle__canvas {
+  display: block;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.el-cp-palette-circle__brightness {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  pointer-events: none;
+  border-radius: 50%;
+}
+.el-cp-palette-circle__pointer {
+  display: block;
+  position: absolute;
+  z-index: 2;
+  left: 50%;
+  top: 50%;
+  width: var(--size-pointer);
+  height: var(--size-pointer);
+  border: var(--size-pointer-stroke) solid var(--color-pointer-fill);
+  border-radius: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  box-shadow: var(--shadow-pointer);
+  box-sizing: border-box;
+}
+.el-cp-palette-circle:active .el-cp-palette-circle__pointer {
+  box-shadow: var(--shadow-pointer-active);
+}
+
+/*# sourceMappingURL=PaletteWheel.css.map */

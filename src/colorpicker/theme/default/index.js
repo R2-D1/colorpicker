@@ -3,7 +3,7 @@ import Palette from '../../ui/Palette';
 import Forms from '../../ui/ColorInformation';
 import Swatch from '../../ui/Swatch';
 import Control from './Control';
-import './index.scss';
+import './index.css';
 
 export default class DefaultColorPicker extends BaseColorPicker {
 

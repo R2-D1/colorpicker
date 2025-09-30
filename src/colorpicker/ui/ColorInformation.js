@@ -1,5 +1,5 @@
 import UIElement from '../UIElement';
-import './ColorInformation.scss';
+import './ColorInformation.css';
 
 export default class ColorInformation extends UIElement {
 

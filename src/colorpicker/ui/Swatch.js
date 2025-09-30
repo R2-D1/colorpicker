@@ -1,5 +1,5 @@
 import UIElement from '../UIElement';
-import './Swatch.scss';
+import './Swatch.css';
 
 export default class Swatch extends UIElement {
 

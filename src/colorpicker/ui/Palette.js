@@ -1,7 +1,7 @@
 import UIElement from '../UIElement';
 import Event from '../../util/Event'
 import Dom from '../../util/Dom';
-import './Palette.scss';
+import './Palette.css';
 
 export default class Palette extends UIElement {
 
