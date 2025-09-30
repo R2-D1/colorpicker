@@ -1,9 +1,9 @@
 {
   "name": "@r2-d1/colorpicker",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "simple colorpicker and gradient picker",
-"main": "src/index.js",
-"style": "dist/EasyLogicColorPicker.css",
+  "main": "src/index.js",
+  "style": "dist/EasyLogicColorPicker.css",
   "files": [
     "dist",
     "src",
