@@ -105,7 +105,7 @@ export class RadialGradient extends Gradient {
         }
       });
 
-    return new RadialGradient({ radialType, colorsteps });
+    return new RadialGradient({ radialType, radialPosition, colorsteps });
   }
 }
  

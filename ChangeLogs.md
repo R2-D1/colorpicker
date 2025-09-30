@@ -1,6 +1,9 @@
 
 # Change Logs 
 
+# 1.0.21
+* fix radial gradient parsing so saved position (e.g. `circle at 47.6% 100%`) is restored correctly
+
 # 1.6.5 
 * image filter  (gray)
 * support lab color (RGBtoLAB, LABtoRGB)
