@@ -105,11 +105,13 @@ const config = (env, options) => {
       path: __dirname + '/dist',
       filename: '[name].js',
       publicPath: './',
-      library: '[name]',
-      libraryTarget: 'umd',
-      libraryExport: 'default'
+      library: {
+        name: '[name]',
+        type: 'umd'
+      }
     };
     out.optimization = {
+      usedExports: false,
       minimize: true,
       minimizer: [
         new TerserJSPlugin({
