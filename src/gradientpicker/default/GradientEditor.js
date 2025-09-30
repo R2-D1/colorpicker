@@ -51,7 +51,8 @@ export default class GradientEditor extends UIElement {
 
   initialize() {
     super.initialize();
-
+    console.log('test');
+    
 
     var colorsteps = [
       {offset: Length.percent(0), cut: false, color: 'yellow'},
