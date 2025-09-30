@@ -1,8 +1,25 @@
 {
   "name": "@r2-d1/colorpicker",
-  "version": "1.0.9",
+  "version": "1.0.10",
   "description": "simple colorpicker and gradient picker",
-  "main": "src/index.js",
+  "main": "index.cjs",
+  "module": "index.mjs",
+  "style": "dist/EasyLogicColorPicker.css",
+  "files": [
+    "dist",
+    "index.cjs",
+    "index.mjs",
+    "README.md",
+    "LICENSE"
+  ],
+  "exports": {
+    ".": {
+      "import": "./index.mjs",
+      "require": "./index.cjs",
+      "default": "./index.mjs"
+    },
+    "./dist/*": "./dist/*"
+  },
   "scripts": {
     "dev": "webpack serve --progress --mode development",
     "prebuild": "rm -rf dist",
@@ -61,6 +78,7 @@
     "webpack-dev-server": "^4.3.0"
   },
   "dependencies": {
+    "@babel/runtime": "^7.28.4",
     "@easylogic/color": "^0.0.7"
   },
   "peerDependencies": {
