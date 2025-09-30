@@ -10,6 +10,7 @@ const resolved = bundle && bundle.default ? bundle.default : bundle;
 // Ensure default export
 module.exports = resolved;
 module.exports.default = resolved;
+module.exports.ColorPicker = resolved;
 
 // Re-export ancillary members when available
 if (bundle && bundle.GradientPicker) {

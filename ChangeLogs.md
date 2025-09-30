@@ -1,6 +1,9 @@
 
 # Change Logs 
 
+# 1.0.17
+* expose `GradientPicker` on default export for backward compatibility
+
 # 1.6.5 
 * image filter  (gray)
 * support lab color (RGBtoLAB, LABtoRGB)

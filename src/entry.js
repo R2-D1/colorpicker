@@ -1,6 +1,11 @@
-import ColorPicker from './colorpicker';
-import GradientPickerUI from './gradientpicker';
+import ColorPickerCore from './colorpicker';
+import GradientPickerCore from './gradientpicker';
 
-export const GradientPicker = GradientPickerUI;
+const ColorPicker = Object.assign(ColorPickerCore, {
+  GradientPicker: GradientPickerCore,
+});
+
+export const GradientPicker = GradientPickerCore;
+export { ColorPicker };
 
 export default ColorPicker;
